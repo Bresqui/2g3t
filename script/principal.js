@@ -12,11 +12,30 @@ eq2grau = (a,b,c) => {
     return "x1 " + div(soma(-b,raiz(delta)),mult(2,a)) + 
            "x2 " + div(sub(-b,raiz(delta)),mult(2,a));
 }
-let a = " ";
-let b = " ";
-let op = " ";
+let a = "";
+let b = "";
+let op = "";
 let resultado = 0;
- function digitando (tecla){
-    a =+ tecla;
-    alert(tecla);
- }
+let tem_ponto = false;
+function mostra_resultado(resul){
+    document.getElementById("resultado").value = resul;
+}
+function operação(nova_op){
+    op = nova_op;
+    a = valor;
+    
+}
+
+function digitando(tecla){
+    if (tecla == "."){
+        if(!tem_ponto){
+            valor = valor + tecla;
+            mostra_resultado(valor);
+            tem_ponto = true;
+
+        }
+        return;
+    }
+   valor = valor + tecla;
+   mostra_resultado(valor);
+}
