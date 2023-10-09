@@ -4,6 +4,7 @@ sub = (a,b) => a - b;
 div = (a,b) => a / b;
 mult = (a,b) => a * b;
 raiz = a => Math.sqrt(a);
+
 eq2grau = (a,b,c) => {
     if(a == 0) return "Não é uma equação do Segundo Grau.";
     let delta = sub(mult(b,b),mult(4,mult(a,c)));
@@ -17,16 +18,44 @@ let b = "";
 let op = "";
 let valor = "";
 let tem_ponto = false;
+let desligada = false;
+function raiz_quadrada(){
+    mostra_resultado( raiz(valor));
+    valor = " ";
+}
+function zerar(){
+    if(desligada) return;
+    a = "";
+    b = "";
+    op = "";
+    valor = "";
+    tem_ponto = false;
+    mostra_resultado(0);
+}
+function desligar(){
+    if(desligada){
+        desligada = false;
+        zerar();
+    }else{
+        zerar();
+        mostra_resultado("");
+        desligada = true;
+    }
+    return desligada;
+}
 function mostra_resultado(resul){
+    if(desligada) return;
      document.getElementById("resultado").value = resul;
 }
 function operacao(nova_op){
+    if(desligada) return;
     op = nova_op;
     a = valor;
     valor = "";
     tem_ponto = false;
 }
 function calcula(){
+    if(desligada) return;
     if(op != ""){
         b = valor;
         valor = "";
@@ -41,6 +70,7 @@ function calcula(){
     }
 }
 function digitando(tecla){
+    if(desligada) return;
     if(tecla == "."){
          if(!tem_ponto){
             valor = valor + tecla;
@@ -52,14 +82,10 @@ function digitando(tecla){
     valor = valor + tecla;
     mostra_resultado(valor);
 }
-function desligar(){
-    if(desligada){
-        desligada = false;
-        zerar();
-    }else{
-        zerar();
-        mostra_resultado("");
-        desligada = true
+function porcentagem(){
+    if(op == "mult") {
+        mostra_resultado(div(mult(a,valor),100));
+        a = "";
+    valor = "";
     }
-    return desligada;
 }
