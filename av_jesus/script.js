@@ -45,3 +45,13 @@ const atualizar_tela = () =>{
     atualizar_tela();
     document.getElementById("nome").value = " ";
  }
+ function limpar_lista(){
+   lista = [];
+   atualizar_tela();
+ }
+ function ordenar_AZ(){
+   le
+ }
+ function ordenar_Za(){
+   
+ }
