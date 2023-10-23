@@ -50,8 +50,13 @@ const atualizar_tela = () =>{
    atualizar_tela();
  }
  function ordenar_AZ(){
-   le
+   if(lista.length > o)
+    lista.sort();
+    atualizar_tela();
  }
  function ordenar_Za(){
-   
+   if(lista.length > o) return;
+    lista.sort();
+   lista.reverse();
+    atualizar_tela();
  }
