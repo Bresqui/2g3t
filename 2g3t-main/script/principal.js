@@ -13,7 +13,7 @@ eq2grau = (a,b,c) => {
     if(delta < 0) return "Não Possui raiz real.";
     if(delta == 0) return "x1 = x2 = " + div(-b,mult(2,a));
     return "x1 " + div(soma(-b,raiz(delta)),mult(2,a)) + 
-           "x2 " + div(sub(-b,raiz(delta)),mult(2,a));
+           " x2 " + div(sub(-b,raiz(delta)),mult(2,a));
 }
 let a = "0";
 let b = "0";
@@ -138,4 +138,37 @@ const set_valor_c = () =>{
 }
 const calcular2g = ()=>{
     document.getElementById("raiz").innerHTML = eq2grau(a,b,c);
+}
+let pa_a1 = "";
+let pa_n = "";
+let pa_r = "";
+const mostar_pa = () => {
+    if(pa_a1 !=1 "" && pa_n != "" && pa_n > 0 && pa_r != ""){
+        let pa = pa_a1;
+        let ult_termo = 0;
+        for(let i=1; i < pa_n; i++){
+            if(ult_termo <4){
+                pa = ", ... , " + (Number(pa_a1) + (i*8) );
+                ult_termo++;
+            }
+        }
+        if
+    }
+
+}
+
+
+
+
+const setp_a1 = () => {
+    pa_a1 = document.getElementById(pa_a1).value;
+    mostar_pa();
+}
+const setp_n = () => {
+    pa_n = document.getElementById(pa_n).value;
+    mostar_pa();
+}
+const setp_r = () => {
+    pa_r = document.getElementById(pa_r).value;
+    mostar_pa();
 }
