@@ -1,2 +1,2 @@
-# DUPLA
-## Fulano - 25 --- Ciclano - 10.
+# Dupla
+## Gabriel-11 --- Matheus-27.

@@ -10,3 +10,53 @@ const atualizar_tela = () =>{
     }
     document.getElementById("lista").innerHTML = "<h1>Lista Vazia</h1>";
 }
+ function inserir_ultimo(){
+    let nome = document.getElementById("nome").value;
+    if(nome == "") return;
+    lista.push(nome);
+    atualizar_tela();
+    document.getElementById("nome").value = " ";
+ }
+ function inserir_primeiro(){
+    let nome = document.getElementById("nome").value;
+    if(nome == "") return;
+    lista.unshift(nome);
+    atualizar_tela();
+    document.getElementById("nome").value = " ";
+ }
+ function deletar_ultimo(){
+    let nome = document.getElementById("nome").value;
+    if(nome == "") return;
+    lista.pop(nome);
+    atualizar_tela();
+    document.getElementById("nome").value = " ";
+ }
+ function deletar_primeiro(){
+    let nome = document.getElementById("nome").value;
+    if(nome == "") return;
+    lista.shift(nome);
+    atualizar_tela();
+    document.getElementById("nome").value = " ";
+ }
+ function deletar_nome(){
+    let nome = document.getElementById("nome").value;
+    if(nome == "") return;
+   [ lista.lenght -1](nome);
+    atualizar_tela();
+    document.getElementById("nome").value = " ";
+ }
+ function limpar_lista(){
+   lista = [];
+   atualizar_tela();
+ }
+ function ordenar_AZ(){
+   if(lista.length > o)
+    lista.sort();
+    atualizar_tela();
+ }
+ function ordenar_Za(){
+   if(lista.length > o) return;
+    lista.sort();
+   lista.reverse();
+    atualizar_tela();
+ }
